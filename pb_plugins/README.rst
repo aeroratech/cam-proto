@@ -17,7 +17,7 @@ How to use it
 .. code-block:: bash
 
     export TEMPLATE_PATH="$(pwd)/templates/swift"
-    protoc --plugin=protoc-gen-custom=$(which protoc-gen-mavsdk) \
+    protoc --plugin=protoc-gen-custom=$(which protoc-gen-mavcam) \
             -I../protos \
             --custom_out=. \
             --custom_opt="file_ext=swift,template_path=${TEMPLATE_PATH}" \

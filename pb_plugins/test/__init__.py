@@ -1,1 +1,1 @@
-import protoc_gen_mavsdk
+import protoc_gen_mavcam

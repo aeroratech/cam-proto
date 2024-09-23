@@ -44,11 +44,11 @@ service CameraService {
     /*
      * Start video streaming.
      */
-    rpc StartVideoStreaming(StartVideoStreamingRequest) returns(StartVideoStreamingResponse) { option (mavsdk.options.async_type) = SYNC; }
+    rpc StartVideoStreaming(StartVideoStreamingRequest) returns(StartVideoStreamingResponse) { option (mavcam.options.async_type) = SYNC; }
     /*
      * Stop current video streaming.
      */
-    rpc StopVideoStreaming(StopVideoStreamingRequest) returns(StopVideoStreamingResponse) { option (mavsdk.options.async_type) = SYNC; }
+    rpc StopVideoStreaming(StopVideoStreamingRequest) returns(StopVideoStreamingResponse) { option (mavcam.options.async_type) = SYNC; }
     /*
      * Set camera mode.
      */
@@ -72,7 +72,7 @@ service CameraService {
     /*
      * Subscribe to capture info updates.
      */
-    rpc SubscribeCaptureInfo(SubscribeCaptureInfoRequest) returns(stream CaptureInfoResponse) { option (mavsdk.options.async_type) = ASYNC; }
+    rpc SubscribeCaptureInfo(SubscribeCaptureInfoRequest) returns(stream CaptureInfoResponse) { option (mavcam.options.async_type) = ASYNC; }
     /*
      * Subscribe to camera status updates.
      */
@@ -80,7 +80,7 @@ service CameraService {
     /*
      * Get the list of current camera settings.
      */
-    rpc SubscribeCurrentSettings(SubscribeCurrentSettingsRequest) returns(stream CurrentSettingsResponse) { option (mavsdk.options.async_type) = ASYNC; }
+    rpc SubscribeCurrentSettings(SubscribeCurrentSettingsRequest) returns(stream CurrentSettingsResponse) { option (mavcam.options.async_type) = ASYNC; }
     /*
      * Get the list of settings that can be changed.
      */
@@ -108,7 +108,7 @@ service CameraService {
      *
      * Bind the plugin instance to a specific camera_id 
      */
-    rpc SelectCamera(SelectCameraRequest) returns(SelectCameraResponse) { option (mavsdk.options.async_type) = SYNC; }
+    rpc SelectCamera(SelectCameraRequest) returns(SelectCameraResponse) { option (mavcam.options.async_type) = SYNC; }
     /*
      * Reset all settings in camera.
      *
@@ -119,7 +119,7 @@ service CameraService {
      * Manual set the definition data
      * e.g. use mavlink ftp download definition file and set to camera
      */
-     rpc SetDefinitionData(SetDefinitionDataRequest) returns(SetDefinitionDataResponse) { option (mavsdk.options.async_type) = SYNC; }
+     rpc SetDefinitionData(SetDefinitionDataRequest) returns(SetDefinitionDataResponse) { option (mavcam.options.async_type) = SYNC; }
 }
 
 message PrepareRequest {}

@@ -27,9 +27,9 @@ def parse_requirements(filename):
         return [requires.strip() for requires in f.readlines()]
 
 setup(
-    name="protoc-gen-mavsdk",
-    version="1.1.1",
-    description="Protoc plugin used to generate MAVSDK bindings",
+    name="protoc-gen-mavcam",
+    version="0.1.1",
+    description="Protoc plugin used to generate MAVCAM bindings",
     url="https://github.com/mavlink/MAVSDK-Proto",
     maintainer="Jonas Vautherin, Julian Oes",
     maintainer_email="jonas.vautherin@gmail.com, julian@oes.ch",
@@ -40,11 +40,11 @@ setup(
         "License :: OSI Approved :: BSD License",
     ],
 
-    packages=["protoc_gen_mavsdk"],
+    packages=["protoc_gen_mavcam"],
     install_requires=parse_requirements("requirements.txt"),
     entry_points={
         "console_scripts": [
-            "protoc-gen-mavsdk= protoc_gen_mavsdk.__main__:main"
+            "protoc-gen-mavcam= protoc_gen_mavcam.__main__:main"
         ]
     }
 )

@@ -115,11 +115,6 @@ service CameraService {
      * This will reset all camera settings to default value
      */
     rpc ResetSettings(ResetSettingsRequest) returns(ResetSettingsResponse) {}
-    /*
-     * Manual set the definition data
-     * e.g. use mavlink ftp download definition file and set to camera
-     */
-     rpc SetDefinitionData(SetDefinitionDataRequest) returns(SetDefinitionDataResponse) { option (mavcam.options.async_type) = SYNC; }
 }
 
 message PrepareRequest {}
@@ -249,13 +244,6 @@ message SelectCameraRequest {
 
 message ResetSettingsRequest {}
 message ResetSettingsResponse {
-    CameraResult camera_result = 1;
-}
-
-message SetDefinitionDataRequest{
-    string definition_data = 1;    // the definition raw data
-}
-message SetDefinitionDataResponse {
     CameraResult camera_result = 1;
 }
 

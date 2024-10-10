@@ -115,6 +115,10 @@ service CameraService {
      * This will reset all camera settings to default value
      */
     rpc ResetSettings(ResetSettingsRequest) returns(ResetSettingsResponse) {}
+    /*
+     * Set camera timestamp.
+     */
+    rpc SetTimestamp(SetTimestampRequest) returns(SetTimestampResponse) {}
 }
 
 message PrepareRequest {}
@@ -244,6 +248,13 @@ message SelectCameraRequest {
 
 message ResetSettingsRequest {}
 message ResetSettingsResponse {
+    CameraResult camera_result = 1;
+}
+
+message SetTimestampRequest {
+    int64 timestamp = 1;
+}
+message SetTimestampResponse {
     CameraResult camera_result = 1;
 }
 

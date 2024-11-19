@@ -119,6 +119,10 @@ service CameraService {
      * Set camera timestamp.
      */
     rpc SetTimestamp(SetTimestampRequest) returns(SetTimestampResponse) {}
+    /*
+     * Set zoom to value as proportion of full camera range (percentage between 0.0 and 100.0).
+     */
+    rpc SetZoomRange(SetZoomRangeRequest) returns(SetZoomRangeResponse) {}
 }
 
 message PrepareRequest {}
@@ -258,6 +262,13 @@ message SetTimestampResponse {
     CameraResult camera_result = 1;
 }
 
+message SetZoomRangeRequest {
+    float range = 1; // Range must be between 0.0 and 100.0
+}
+message SetZoomRangeResponse {
+   CameraResult camera_result = 1;
+}
+
 // Result type.
 message CameraResult {
     // Possible results returned for camera commands
@@ -288,7 +299,7 @@ enum Mode {
 // Photos range type.
 enum PhotosRange {
     PHOTOS_RANGE_ALL = 0; // All the photos present on the camera
-    PHOTOS_RANGE_SINCE_CONNECTION = 1; // Photos taken since MAVSDK got connected
+    PHOTOS_RANGE_SINCE_CONNECTION = 1; // Photos taken since MAVCam got connected
 }
 
 // Position type in global coordinates.

@@ -85,7 +85,7 @@ class Method(object):
         self._is_async = True
 
         for option_line in pb_method.options.__str__().splitlines():
-            if "[mavsdk.options.async_type]" in option_line:
+            if "[mavcam.options.async_type]" in option_line:
                 async_type = option_line.split(':')[-1].strip()
 
                 if async_type == "SYNC":

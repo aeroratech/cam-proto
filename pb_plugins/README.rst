@@ -1,5 +1,5 @@
 ======================================
-Autogenerator for the MAVSDK
+Autogenerator for the MAVCam
 ======================================
 
 Install instructions
